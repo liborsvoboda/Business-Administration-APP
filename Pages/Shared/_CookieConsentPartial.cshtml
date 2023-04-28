@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Http.Features
+@{
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
+    var showBanner = !consentFeature?.CanTrack ?? false;
+    var cookieString = consentFeature?.CreateConsentCookie();
+}
+@if (showBanner)
+{
+    <div id="cookieConsent" class="alert alert-info alert-dismissable" style="z-index: 10000;">
+        <div class="container">
+            Při poskytování našich služeb nám pomáhají soubory cookie.
+            Využíváním našich služeb s jejich používáním souhlasíte.
+            @*<a class="mycolor" asp-page="/Privacy">Learn More</a>.*@
+            <a class="mycolor" href="https://app.cz/ochrana-osobnich-udaju/" target="_blank" >Více informací</a>.
+            <button type="button" class="btn btn-primary btn-sm acceptcookies" data-dismiss="alert" data-cookie-string="@cookieString" aria-label="Close">
+                Rozumím
+            </button>
+            <button data-cookie="@cookieString" type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+    </div>
+    <script>
+        (function () {
+            document.querySelector("#cookieConsent button[data-cookie-string]").addEventListener("click", function (el) {
+                document.cookie = el.target.dataset.cookieString;
+                document.querySelector("#cookieConsent").classList.add("hidden");
+            }, false);
+            document.querySelector("#cookieConsent button[data-cookie]").addEventListener("click", function (el) {
+                document.cookie = el.target.dataset.cookieString;
+            }, false);
+        })();
+    </script>
+}
+
+

@@ -1,0 +1,16 @@
+﻿@if (Context.Request.Path.StartsWithSegments("/BusinessExternal", StringComparison.OrdinalIgnoreCase)
+             || Context.Request.Path.StartsWithSegments("/Registration", StringComparison.OrdinalIgnoreCase)
+             || Context.Request.Path.StartsWithSegments("/RegistrationMonth", StringComparison.OrdinalIgnoreCase)
+             || Context.Request.Path.StartsWithSegments("/Login", StringComparison.OrdinalIgnoreCase)
+             || Context.Request.Path.StartsWithSegments("/ResetPassword", StringComparison.OrdinalIgnoreCase))
+{
+    Layout = "Shared/_ExternalLayout.cshtml";
+}
+else if (Context.Request.Path.StartsWithSegments("/Shoptet", StringComparison.OrdinalIgnoreCase))
+{
+    Layout = "Shared/_ThirdPartyLayout.cshtml";
+}
+else
+{
+    Layout = "_Layout";
+}

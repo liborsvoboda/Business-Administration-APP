@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"] - app.cz</title>
+
+    @*<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=latin-ext" rel="stylesheet">*@
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <!-- Google Tag Manager -->
+    <script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5F3ZL4N');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/js/site.css" />
+    </environment>
+    <environment exclude="Development">
+        @*<link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"*@
+        <link rel="stylesheet" href="~/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5F3ZL4N"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    <div id="leftMenu" class="layout layout-nav-side">
+        <div class="navbar navbar-expand-lg sticky-top" style="min-height:100%;margin-bottom: 0px;overflow-y: auto;">
+            @*<a class="navbar-brand w-100 mb-lg-4" href="/">*@
+            <img src="~/images/logo.png" alt="app.cz" class="img-fluid" style="width:216px;max-width: 216px;" />
+            @*</a>*@
+
+            <div id="localeSwitcherVue"></div>
+
+            <div class="d-flex mt-3">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <span class="fas fa-bars"></span>
+                    </span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse flex-column" id="navbar-collapse">
+                <ul class="navbar-nav d-lg-block">
+
+                    <li class="nav-item pb-md-3" style="float:none">
+                        <a href="/NewCampaign" class="btn btn-main-primary btn_new">
+                            <span class="fa fa-plus"></span> Nová kampaň
+                        </a>
+                    </li>
+
+                    <li class="nav-item" style="float:none">
+                        @*<span class="label">Vítejte</span>*@
+                        <a href="/" class="btn btn-primary btn_nav_other">
+                            <span class="fa fa-star"></span> Začínáme
+                        </a>
+                    </li>
+
+                    <hr />
+
+                    <li class="nav-item" style="float:none">
+                        @*<span class="label">Nastavení</span>*@
+                        <a href="/Campaigns" class="btn btn-primary btn_nav_other">
+                            <span class="far fa-paper-plane"></span> Kampaně &nbsp;&nbsp;&nbsp;&nbsp;<div id="layoutCampaignStatusVue"></div>
+                        </a>
+
+                        <a href="/PixelInstallation" class="btn btn-primary btn_nav_other">
+                            <span class="far fa-file-code"></span> Instalace Pixelu &nbsp;&nbsp;&nbsp;&nbsp;<div id="layoutPixelAlertVue"></div>
+                        </a>
+
+                        <a href="/HeurekaApi" class="btn btn-primary btn_nav_other">
+                            <span class="fas fa-key"></span> Heureka API &nbsp;&nbsp;&nbsp;&nbsp;<div id="layoutHeurekaStatusVue"></div>
+                        </a>
+                        <a href="/ZboziApi" class="btn btn-primary btn_nav_other">
+                            <span class="fas fa-key"></span> Zboží.cz API &nbsp;&nbsp;&nbsp;&nbsp;<div id="layoutZboziStatusVue"></div>
+                        </a>
+                    </li>
+
+                    <hr />
+                    <li class="nav-item" id="layoutAbTestingVue"></li>
+
+                    <li class="nav-item" style="float:none">
+                        @*<span class="label">Účet</span>*@
+                        <a href="/Settings" class="btn btn-primary btn_nav_other">
+                            <span class="fas fa-cogs"></span> Váš účet
+                        </a>
+                        @*</li>
+
+            <li class="nav-item" style="float:none">*@
+                        @*<span class="label">Nápověda</span>*@
+                        <a href="https://napoveda.app.cz/?utm_source=app.app.cz&utm_medium=menu-napoveda&utm_campaign=menu-napoveda" target="_blank" class="btn btn-primary btn_nav_other">
+                            <span class="far fa-life-ring"></span> Nápověda
+                        </a>
+                        @*</li>
+
+            <li class="nav-item" style="float:none">*@
+                        @*<span class="label">Nákup</span>*@
+                        <a href="/BusinessPlanSelection" class="btn btn-primary btn_nav_other">
+                            <span class="fas fa-shopping-basket"></span> Objednat
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item" style="float:none;margin-top: 50px;">
+                    </li>
+                    @*<div
+        class="nav-item" style="margin-top: 50px;">*@
+                    <hr />
+                    <li class="nav-item" id="layoutAdminVue"></li>
+
+                    <li class="nav-item" id="layoutLoginStatusVue"></li>
+                    <li class="nav-item" id="layoutCreditStatusVue"></li>
+                    <li class="nav-item version">©2020 <a class="copyright" href="https://app.cz/?utm_source=app.app.cz&utm_medium=app-copyright&utm_campaign=app-copyright" target="_blank">app.cz</a> | Verze 1.3.1</li>
+                    @*</div>*@
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="main-container">
+
+            <div id="layoutTrialVue"></div>
+
+            @RenderBody()
+        </div>
+    </div>
+
+    <partial name="_CookieConsentPartial" />
+
+
+    <environment include="Development">
+        <script src="~/js/site.min.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

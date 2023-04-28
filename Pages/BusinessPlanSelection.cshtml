@@ -1,0 +1,52 @@
+﻿@page
+@model BusinessPlanSelectionModel
+@{
+    ViewData["Title"] = "Výběr plánu";
+
+}
+<div id="cshtmlSection"></div>
+<p style="height: 24px;"></p>
+<div class="footer">
+    <div class="container">
+        <a class="copyright" href="https://app.cz/vseobecne-obchodni-podminky/?utm_source=app.app.cz&utm_medium=app-paticka&utm_campaign=app-obchodni-podminky" target="_blank">Všeobecné obchodní podmínky</a> |
+        <a class="copyright" href="https://app.cz/ochrana-osobnich-udaju/?utm_source=app.app.cz&utm_medium=app-paticka&utm_campaign=app-ochrana-udaju" target="_blank">Ochrana osobních údajů</a> |
+        <a class="copyright" href="https://app.cz/kontakt/?utm_source=app.app.cz&utm_medium=app-paticka&utm_campaign=app-kontakt" target="_blank">Kontakt</a>
+    </div>
+</div>
+
+
+<script>
+    var selectedpay = "month";
+
+    function changeSelection(i) {
+        if (i == "month") {
+            document.getElementById(i).className = "businessSelectionMonthOn shadow";
+            document.getElementById("year").className = "businessSelectionYearOff shadow";
+
+            document.getElementById("StartYear").style.display = "none";
+            document.getElementById("BasicYear").style.display = "none";
+            document.getElementById("ProYear").style.display = "none";
+            document.getElementById("BusYear").style.display = "none";
+
+            document.getElementById("StartMonth").style.display = "block";
+            document.getElementById("BasicMonth").style.display = "block";
+            document.getElementById("ProMonth").style.display = "block";
+            document.getElementById("BusMonth").style.display = "block";
+            selectedpay = "month";
+        } else {
+            document.getElementById("year").className = "businessSelectionYearOn shadow";
+            document.getElementById("month").className = "businessSelectionMonthOff shadow";
+            document.getElementById("StartMonth").style.display = "none";
+            document.getElementById("BasicMonth").style.display = "none";
+            document.getElementById("ProMonth").style.display = "none";
+            document.getElementById("BusMonth").style.display = "none";
+
+            document.getElementById("StartYear").style.display = "block";
+            document.getElementById("BasicYear").style.display = "block";
+            document.getElementById("ProYear").style.display = "block";
+            document.getElementById("BusYear").style.display = "block";
+            selectedpay = "year";
+        }
+
+    }
+</script>

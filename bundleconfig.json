@@ -1,0 +1,130 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/js/site.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/adminShoptet.min.css",
+    "inputFiles": [
+      "Styles/adminShoptet.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/css/bootstrap.min.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/dist/css/bootstrap.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/iframeResizer.min.js",
+    "inputFiles": [
+      "./scripts/iframeResizer.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/adminShoptet.min.js",
+    "inputFiles": [
+      "./scripts/adminShoptet.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/jquery-ui.min.js",
+    "inputFiles": [
+      "./scripts/jquery-ui.min.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/app.min.js",
+    "inputFiles": [
+      "./scripts/app.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/app_en.min.js",
+    "inputFiles": [
+      "./scripts/app_en.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  //{
+  //  "outputFileName": "wwwroot/js/uuid.min.js",
+  //  "inputFiles": [
+  //    "./scripts/uuid.min.js"
+  //  ]
+  //},
+  //{
+  //  "outputFileName": "wwwroot/js/wsp.min.js",
+  //  "inputFiles": [
+  //    "./scripts/wsp.min.js"
+  //  ],
+  //  "sourceMap": true
+  //},
+  {
+    "outputFileName": "wwwroot/js/uuid.min.js",
+    "inputFiles": [
+      "./scripts/fingerprint2.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  },
+  {
+    "outputFileName": "wwwroot/js/wsp.min.js",
+    "inputFiles": [
+      "./scripts/wsp.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": true
+  },
+  {
+    "outputFileName": "wwwroot/js/app.js",
+    "inputFiles": [
+      "./scripts/app.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/app_en.js",
+    "inputFiles": [
+      "./scripts/app_en.js"
+    ]
+  }
+  //,
+  //{
+  //  "outputFileName": "wwwroot/js/site.min.js",
+  //  "inputFiles": [
+  //    "wwwroot/dist/bundle.js"
+  //  ]
+  //  ,
+  //  "minify": {
+  //    "enabled": true,
+  //    "renameLocals": true
+  //  },
+  //  "sourceMap": false
+  //}
+]
